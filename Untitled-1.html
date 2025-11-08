@@ -22,6 +22,27 @@
   --radius:14px;
 }
 
+#preloader{
+  position:fixed;
+  inset:0;
+  background:#fff6fb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999999;
+}
+
+.loader-heart{
+  font-size:42px;
+  animation:beat 1.2s infinite;
+}
+
+@keyframes beat{
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+}
+
+
 /* Basic */
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -377,6 +398,18 @@ setInterval(updateCountdown, 1000);
 })();
 </script>
 
+<script>
+  window.addEventListener("load", function(){
+    document.getElementById("preloader").style.display = "none";
+  });
+  </script>
+  
+
 </body>
+
+<div id="preloader">
+  <div class="loader-heart">🎂</div>
+</div>
+
 
 </html>
